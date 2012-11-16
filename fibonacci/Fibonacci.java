@@ -2,6 +2,12 @@ package fibonacci;
 
 public class Fibonacci
 {
+  /**
+   *  Returns the n-th number in the fibonacci sequence.
+   *
+   *  @param n Sequence number
+   *  @return The n-th number in the fibonacci sequence.
+   */
   public static long fibonacci(long n)
   {
     if (n < 2)

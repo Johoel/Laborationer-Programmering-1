@@ -2,6 +2,14 @@ package fibonacci;
 
 public class FirstWithNDigits
 {
+  /**
+   *  Finds the first number in the fibonacci sequence with the given number of digits.
+   *  Note: This is a brute force-method, which means that it takes long time to run the method
+   *  for n > 9.
+   *
+   *  @param n Number of digits
+   *  @return The first number with n digits.
+   */
   public static long firstWithNDigits(long n) throws IllegalArgumentException
   {
     if (n <= 0)
