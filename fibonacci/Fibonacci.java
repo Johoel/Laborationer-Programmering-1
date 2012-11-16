@@ -2,7 +2,7 @@ package fibonacci;
 
 public class Fibonacci
 {
-  public static int fibonacci(int n)
+  public static long fibonacci(long n)
   {
     if (n < 2)
       return n;
@@ -16,7 +16,7 @@ public class Fibonacci
     {
       try
       {
-        int n = Integer.parseInt(args[0]);
+        long n = Long.parseLong(args[0]);
 
         System.out.println(fibonacci(n));
       }
