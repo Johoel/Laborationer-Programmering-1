@@ -20,6 +20,12 @@ public class GameOfLifeGUI extends JFrame implements ActionListener
   private LifePanel lifePanel;
   private Timer timer;
 
+  /**
+   *  Creates a window of given width and height.
+   *
+   *  @param width  window width
+   *  @param height window height
+   */
   public GameOfLifeGUI(int width, int height)
   {
     super("Conway's Game of Life");
@@ -27,6 +33,7 @@ public class GameOfLifeGUI extends JFrame implements ActionListener
     this.width = width;
     this.height = height;
 
+    // Change window settings
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     setLocationRelativeTo(null);
     setResizable(false);
@@ -39,11 +46,10 @@ public class GameOfLifeGUI extends JFrame implements ActionListener
     lifePanel.requestFocus();
 
     timer = new Timer(250, this);
-    //timer.start();
   }
 
   /**
-   *  Initialize components.
+   *  Initialize window components.
    *
    *  @param pane The Container in which all the components will be added to.
    */

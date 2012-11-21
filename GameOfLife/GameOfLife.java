@@ -89,7 +89,7 @@ public class GameOfLife
   /**
    *  Create a new Game of Life with a grid of given width and height.
    *
-   *  @param width Width of grid
+   *  @param width  Width of grid
    *  @param height Height of grid
    */
   public GameOfLife(int width, int height)
@@ -114,7 +114,7 @@ public class GameOfLife
    *  Create a new Game of Life with a grid of given width and height.
    *  Creates random patterns on grid if random is true.
    *
-   *  @param width Width of grid
+   *  @param width  Width of grid
    *  @param height Height of grid
    *  @param random Create random patterns on grid if true
    */
@@ -159,7 +159,7 @@ public class GameOfLife
    *  @param x X-coordinate
    *  @param y Y-coordinate
    *
-   *  @return Number of neighbours surrounding the cell at the given position.
+   *  @return  Number of neighbours surrounding the cell at the given position.
    */
   private int getAliveNeighbours(int x, int y)
   {
@@ -195,8 +195,8 @@ public class GameOfLife
   /**
    *  Creates the specified LifeForm on the grid, at the given x- and y-position.
    *
-   *  @param x X-coordinate
-   *  @param y Y-coordinate
+   *  @param x        X-coordinate
+   *  @param y        Y-coordinate
    *  @param lifeForm LifeForm to create
    */
   public void createLifeForm(int x, int y, LifeForms lifeForm)
@@ -230,6 +230,8 @@ public class GameOfLife
   }
 
   /**
+   *  Returns the height of the grid.
+   *
    *  @return The height of the grid.
    */
   public int getHeight()
@@ -238,6 +240,8 @@ public class GameOfLife
   }
 
   /**
+   *  Returns the width of the grid.
+   *
    *  @return The width of the grid.
    */
   public int getWidth()
@@ -248,8 +252,8 @@ public class GameOfLife
   /**
    *  Changes the state of the cell at the given x- and y-position.
    *
-   *  @param x X-coordinate
-   *  @param y Y-coordinate
+   *  @param x     X-coordinate
+   *  @param y     Y-coordinate
    *  @param alive Cell is alive (true) or dead (false)
    */
   public void setCellState(int x, int y, boolean alive)
@@ -265,6 +269,7 @@ public class GameOfLife
   {
     boolean[][] newGrid = new boolean[height][width];
 
+    // Iterate through all cells
     for (int y = 0; y < height; y++)
     {
       for (int x = 0; x < width; x++)
@@ -275,7 +280,6 @@ public class GameOfLife
 
         if (cell)
         {
-          //System.out.printf("Neighbours: %d\n", aliveNeighbours);
           if (aliveNeighbours < 2 || aliveNeighbours > 3)
             newGrid[y][x] = DEAD;
           else
