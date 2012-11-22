@@ -12,6 +12,12 @@ import javax.swing.Timer;
 
 import GameOfLife.GameOfLife;
 
+/**
+ *  Simple GUI for my implementation of Conway's Game of Life.
+ *
+ *  @author  Joel Abrahamsson
+ *  @version %G%
+ */
 public class GameOfLifeGUI extends JFrame implements ActionListener
 {
   private int width, height;

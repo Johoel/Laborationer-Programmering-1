@@ -13,6 +13,12 @@ import javax.swing.Timer;
 
 import langton.LangtonsAnt;
 
+/**
+ *  Simple GUI for my implementation of Langton's Ant.
+ *
+ *  @author  Joel Abrahamsson
+ *  @version %G%
+ */
 public class LangtonGUI extends JFrame implements ActionListener
 {
   private final int BLACK = Color.BLACK.getRGB();

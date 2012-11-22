@@ -4,6 +4,13 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ *  A simple solver for Knight's Tour using Warndorff's rule.
+ *  (see <a href="http://en.wikipedia.org/wiki/Knight's_tour">Wikipedia</a>)
+ *
+ *  @author   Joel Abrahamsson
+ *  @version  %G%
+ */
 public class KnightsTour
 {
   private final Point[] moveRules =
@@ -139,7 +146,8 @@ public class KnightsTour
   }
 
   /**
-   *  Moves the knight
+   *  Moves the knight to the square where the knight can move to as few
+   *  squares as possible.
    */
   public boolean step()
   {

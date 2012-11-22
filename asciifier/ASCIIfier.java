@@ -9,6 +9,14 @@ import java.io.File;
 import java.util.HashMap;
 import javax.imageio.ImageIO;
 
+/**
+ *  A program that "ASCIIfies" a given input image using a given character/symbol.
+ *  It takes an input image and creates a new image where all the pixels from the input
+ *  image are drawn as the given character/symbol.
+ *
+ *  @author  Joel Abrahamsson
+ *  @version %G%
+ */
 public class ASCIIfier
 {
   private BufferedImage input;

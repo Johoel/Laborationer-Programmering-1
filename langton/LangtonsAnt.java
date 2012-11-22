@@ -4,6 +4,12 @@ import java.awt.Point;
 import java.util.HashSet;
 import java.util.Random;
 
+/**
+ *  An implementation of Langton's Ant. The plane is "infinite".
+ *
+ *  @author   Joel Abrahamsson
+ *  @version  %G%
+ */
 public class LangtonsAnt
 {
   /*
@@ -43,12 +49,12 @@ public class LangtonsAnt
    *  @param randomizePlane if true, randomly set the color of all cells on the plane
    *  @param randomStart    if true, the ant will be put on a random cell on the plane
    */
-  public LangtonsAnt(int width, int height, boolean randomizeBoard, boolean randomStart)
+  public LangtonsAnt(int width, int height, boolean randomizePlane, boolean randomStart)
   {
     this(width, height);
 
-    if (randomizeBoard)
-      randomizeBoard(width, height);
+    if (randomizePlane)
+      randomizePlane(width, height);
 
     if (randomStart)
       ant = new Point((int)(Math.random() * width),
@@ -61,7 +67,7 @@ public class LangtonsAnt
    *  @param width  the widht of the plane
    *  @param height the height of the plane
    */
-  private void randomizeBoard(int width, int height)
+  private void randomizePlane(int width, int height)
   {
     Random random = new Random(System.nanoTime());
 

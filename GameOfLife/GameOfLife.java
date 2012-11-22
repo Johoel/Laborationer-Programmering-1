@@ -2,6 +2,13 @@ package GameOfLife;
 
 import java.util.Random;
 
+/**
+ *  Implementation of Conway's Game of Life. Uses a finite board.
+ *  (see <a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life">Wikipedia</a>)
+ *
+ *  @author  Joel Abrahamsson
+ *  @version %G%
+ */
 public class GameOfLife
 {
   private final boolean ALIVE = true;
