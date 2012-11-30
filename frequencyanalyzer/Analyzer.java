@@ -10,6 +10,12 @@ import java.util.Arrays;
 import java.util.TreeMap;
 import java.util.Iterator;
 
+/**
+ *  A simple frequency analyzer.
+ *
+ *  @author  Joel Abrahamsson
+ *  @version %G%
+ */
 public class Analyzer
 {
   private int bufferSize;
@@ -17,6 +23,13 @@ public class Analyzer
   private long minValue;
   private TreeMap<Byte, Long> table = new TreeMap<Byte, Long>();
 
+  /**
+   *  Creates a new Analyzer-object which analyze the given input stream.
+   *  The buffer size is specified by bufferSize.
+   *
+   *  @param in         input stream
+   *  @param bufferSize desired buffer size
+   */
   public Analyzer(InputStream in, int bufferSize) throws IOException
   {
     this.bufferSize = bufferSize;
@@ -24,11 +37,23 @@ public class Analyzer
     setMaxAndMinValues();
   }
 
+  /**
+   *  Creates a new Analyzer-object which analyze the given input stream.
+   *  Uses the default buffer size of 1kb.
+   *
+   *  @param in         input stream
+   *  @param bufferSize desired buffer size
+   */
   public Analyzer(InputStream in) throws IOException
   {
     this(in, 10240);
   }
 
+  /**
+   *  Analyze the given input stream.
+   *
+   *  @param in input stream
+   */
   private void analyze(InputStream in) throws IOException
   {
     byte[] buffer = new byte[bufferSize];
@@ -45,6 +70,13 @@ public class Analyzer
     }
   }
 
+  /**
+   *  Creates a string of #-symbols. The number of symbols are
+   *  specified by length.
+   *
+   *  @param length the number of symbols
+   *  @return       String of #-symbols
+   */
   private String createStringLine(int length)
   {
     StringBuilder line = new StringBuilder(length);
@@ -54,6 +86,9 @@ public class Analyzer
     return line.toString();
   }
 
+  /**
+   *  Sets the maximum and minimum values.
+   */
   private void setMaxAndMinValues()
   {
     Long[] values = new Long[table.size()];
@@ -65,16 +100,32 @@ public class Analyzer
     maxValue = values[table.size() - 1];
   }
 
+  /**
+   *  Returns the maximum value.
+   *  
+   *  @return the maximum value
+   */
   public long getMaxValue()
   {
     return maxValue;
   }
 
+  /**
+   *  Returns the minimum value.
+   *
+   *  @return the minimum value
+   */
   public long getMinValue()
   {
     return minValue;
   }
 
+  /**
+   *  Prints the analysis to given PrintStream.
+   *
+   *  @param out       output stream
+   *  @param maxLength the max length of output
+   */
   public void printAnalysis(PrintStream out, int maxLength) throws IOException
   {
     String line = createStringLine(maxLength);
