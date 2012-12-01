@@ -139,7 +139,7 @@ public class SortingTest
 
     timeBefore = System.nanoTime();
 
-      algorithm..sort(array);
+      algorithm.sort(array);
 
     timeAfter = System.nanoTime();
 
